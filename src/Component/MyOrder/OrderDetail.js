@@ -21,6 +21,7 @@ export default function OrderDetail(props){
             <table>
 
                 {/* first row of the table */}
+                <thead>
                 <tr>
                     <th>S.no</th>
                     <th>Product Name</th>
@@ -28,21 +29,29 @@ export default function OrderDetail(props){
                     <th>Quantity</th>
                     <th>Total Price</th>
                 </tr>
+                </thead>
+
 
                 {/* rendering all the product's within order  */}
-                {list.map((product,i) => <tr>
+                <tbody>
+                {list.map((product,i) => 
+                                        <tr key={i}>
                                             <td>{i + 1}</td>
                                             <td>{product.name}</td>
                                             <td>{product.price}</td>
                                             <td>x{product.quantity}</td>
                                             <td>₹{product.quantity * product.price}</td>
-                                        </tr>)}
+                                        </tr>
+                                        )}
+                </tbody>
                 
                 {/* last row to show total amount of the order */}
+                <tfoot>
                 <tr>
                     <td colSpan={4}>Grand Total</td>
                     <td>₹{amount}</td>
                 </tr>
+                </tfoot>
 
             </table>
         </div>

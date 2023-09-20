@@ -13,7 +13,7 @@ import { MyOrder } from "./Pages/MyOrder";
 import { Cart } from "./Pages/Cart";
 import { SignIn } from "./Pages/SignIn";
 import { SignUp } from "./Pages/SignUp";
-import { Error } from "./Pages/Error";
+//import { Error } from "./Pages/Error";
 
 // main app function 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     {
       path:"/", 
       element: <Navbar />,
-      errorElement: <Error />,
+      // errorElement: <Error />,
       children:[
         { index:true, element: <Home />},
         { path:"/myorder", element: <MyOrder />},

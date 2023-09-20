@@ -46,7 +46,7 @@ export default function CartItem(props){
 
                             {/* to decrease product quantity */}
                             <span className={styles.minus}>
-                                <i class="fa-solid fa-circle-minus"
+                                <i className="fa-solid fa-circle-minus"
                                     onClick={() => decreaseQuant(props.product)} ></i> 
                             </span>
 
@@ -55,7 +55,7 @@ export default function CartItem(props){
 
                             {/* increase product quantity */}
                             <span className={styles.plus}>
-                                <i class="fa-solid fa-circle-plus"
+                                <i className="fa-solid fa-circle-plus"
                                     onClick={() => increaseQuant(props.product)}></i>    
                             </span>
                             
