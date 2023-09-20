@@ -1,4 +1,4 @@
-
+ 
 // react hooks
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -73,7 +73,7 @@ export function ProductContext({children}){
             setLoggedIn(token);
             setUserLoggedIn(user);
         }
-    },[]);
+    },[setLoggedIn, setUserLoggedIn]);
 
 
 
@@ -82,7 +82,7 @@ export function ProductContext({children}){
         // check whether user is logged in or not
         if(isLoggedIn){
             // getting real-time update of data
-            const unsub = onSnapshot(doc(db, "buybusy",userLoggedIn.id), (doc) => {
+            onSnapshot(doc(db, "buybusy",userLoggedIn.id), (doc) => {
                 // storing all the data in cart
                 setCart(doc.data().cart);
                 setMyOrders(doc.data().orders);
@@ -93,7 +93,7 @@ export function ProductContext({children}){
             setTotal(sum);
             setItemInCart(cart.length);
         }
-    },[userLoggedIn]);
+    },[cart, isLoggedIn, userLoggedIn]);
     
 
 
