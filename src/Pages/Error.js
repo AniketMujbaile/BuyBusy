@@ -3,19 +3,19 @@
 import { useEffect } from "react";
 
 // react router
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 
 
 // render error page
 export function Error(){
-    const navigate=useNavigate();
+    // const navigate=useNavigate();
 
     // redirect to homepage after 3 second
-    useEffect(()=>{
-        setTimeout(()=>{
-            navigate("/");
-        },3000);
-    },[])
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         navigate("/");
+    //     },3000);
+    // },[])
 
 
     return(
