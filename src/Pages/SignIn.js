@@ -1,4 +1,4 @@
-
+ 
 // react hook
 import { useRef } from "react";
 
@@ -37,9 +37,8 @@ export function SignIn(){
         // sign in user
         const status=await signIn(data);
         // if user signed in redirect to corresponding page
-        {status?navigate("/"):navigate("/signin")};        
+        status?navigate("/"):navigate("/signin");        
     }   
-
 
     return(
         // main container of the page
