@@ -1,4 +1,4 @@
-
+ 
 // react hooks
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -37,7 +37,7 @@ export function AuthContext({children}){
 
     // getting all the users from data base on first render of page
     useEffect(()=>{
-        const unsub = onSnapshot(collection(db, "buybusy"), (snapShot) => {
+          onSnapshot(collection(db, "buybusy"), (snapShot) => {
             const users = snapShot.docs.map((doc) => {
                 return {
                     id:doc.id,
@@ -63,7 +63,7 @@ export function AuthContext({children}){
         }
 
         // if email not found create new user 
-        const docRef =await addDoc(collection(db, "buybusy"), {
+        await addDoc(collection(db, "buybusy"), {
             name:data.name,
             email:data.email,
             password:data.password,
@@ -126,7 +126,7 @@ export function AuthContext({children}){
 
     return(
         // context API with values
-        <>
+         
             <authContext.Provider value={
                 {createUser,
                 isLoggedIn,
@@ -139,6 +139,5 @@ export function AuthContext({children}){
                 <ToastContainer />
                 {children}                  
             </authContext.Provider>
-        </>
     );
 }
